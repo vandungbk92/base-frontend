@@ -1,0 +1,47 @@
+﻿{
+  "dataMaster": [{
+    "unit": "Đơn vị ABC",
+    "fromDate": "01/01/2018",
+    "toDate": "25/12/2018",
+    "sumRequest": "5",
+    "processingComplete": "2",
+    "processing": "3",
+    "tooLate": "1"
+  }],
+	"dataDetails" : [{
+			"linh_vuc_phan_anh" : "Vỉa hè chưa sửa",
+			"noi_dung" : "Nội dung phản ánh 1",
+			"ngay_gui" : "01/01/2018",
+			"nhan_vien_xu_ly" : "Lê Văn Mạnh",
+			"trang_thai" : "Đã xử lý",
+			"danh_gia" : "4"
+		}, {
+    "linh_vuc_phan_anh" : "Vỉa hè chưa sửa",
+    "noi_dung" : "Nội dung phản ánh 1",
+    "ngay_gui" : "01/01/2018",
+    "nhan_vien_xu_ly" : "Lê Văn Mạnh",
+    "trang_thai" : "Đã xử lý",
+    "danh_gia" : "4"
+  },{
+    "linh_vuc_phan_anh" : "Vỉa hè chưa sửa",
+    "noi_dung" : "Nội dung phản ánh 1",
+    "ngay_gui" : "01/01/2018",
+    "nhan_vien_xu_ly" : "Lê Văn Mạnh",
+    "trang_thai" : "Đã xử lý",
+    "danh_gia" : "4"
+  },{
+    "linh_vuc_phan_anh" : "Vỉa hè chưa sửa",
+    "noi_dung" : "Nội dung phản ánh 1",
+    "ngay_gui" : "01/01/2018",
+    "nhan_vien_xu_ly" : "Lê Văn Mạnh",
+    "trang_thai" : "Đã xử lý",
+    "danh_gia" : "4"
+  },{
+    "linh_vuc_phan_anh" : "Vỉa hè chưa sửa",
+    "noi_dung" : "Nội dung phản ánh 1",
+    "ngay_gui" : "01/01/2018",
+    "nhan_vien_xu_ly" : "Lê Văn Mạnh",
+    "trang_thai" : "Đã xử lý",
+    "danh_gia" : "4"
+  }]
+}

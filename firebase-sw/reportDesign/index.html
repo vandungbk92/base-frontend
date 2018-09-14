@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/stimulsoft.designer.office2013.whiteblue.css">
+  <link rel="stylesheet" href="styles/stimulsoft.viewer.office2013.whiteblue.css">
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/stimulsoft.reports.js"></script>
+  <script src="scripts/stimulsoft.viewer.js"></script>
+  <script src="scripts/stimulsoft.designer.js"></script>
+  <!-- endbuild -->
+  <!-- endbuild -->
+</head>
+<body>
+<div id="viewerContent">
+  Hello Đây là báo cáo
+</div>
+<script type="text/javascript">
+
+  //let hostname = (window.location.protocol === 'http:' ? 'http://api.cfs.thinklabs.vn:5004' : 'https://api.311.thinklabs.vn')
+  let hostname = 'http://localhost:7084'
+  let url = new URL(window.location.href);
+  //let path = url.searchParams.get("path");
+  //let params = url.search.substr(1)
+  //let token = '&token=' + (getCookie('_SET_STATE_USER_NAME_LOGIN_')).token
+  console.log(url)
+  let search = url.search.substr(1)
+  let urlGetDataReport = hostname + search
+  //console.log(urlGetDataReport)
+  //console.log(urlGetDataReport.length)
+  //console.log(localStorage.i18nextLng)
+
+  let languageRp = 'vi'//localStorage.i18nextLng ? localStorage.i18nextLng : 'vi'
+  let languageRpImpt = "./Localization/" + languageRp + '.xml'
+  Stimulsoft.Base.Localization.StiLocalization.addLocalizationFile(languageRpImpt, true);
+  Stimulsoft.Base.Localization.StiLocalization.setLocalizationFile(languageRpImpt, true);
+
+  let report = new Stimulsoft.Report.StiReport();
+
+  report.loadFile("./reports/BC Chi tiết (lĩnh vực).mrt");
+
+  let viewer = new Stimulsoft.Viewer.StiViewer(null, "StiViewer", false)
+
+
+  viewer.report = report;
+
+  viewer.report.dictionary.databases.getByIndex(0).pathData = './reports/Demo.json';
+  viewer.options.toolbar.showDesignButton = false;
+  viewer.options.toolbar.showSaveButton = true;
+  viewer.options.toolbar.showSendEmailButton = false;
+  viewer.options.toolbar.printDestination = 0; //Default - 0, PDF - 1, Direct - 2, Preview - 3
+  viewer.options.appearance.scrollbarsMode = true;
+  viewer.options.toolbar.showAboutButton = false;
+  viewer.options.height = "calc(100vh - 20px)"
+  viewer.options.toolbar.viewMode = Stimulsoft.Viewer.StiWebViewMode.WholeReport;
+
+  viewer.options.exports.showExportToDocument = false;
+  viewer.options.exports.showExportToPdf = true;
+  viewer.options.exports.showExportToHtml = true;
+  viewer.options.exports.showExportToWord2007 = false;
+  viewer.options.exports.showExportToExcel2007 = true;
+  viewer.options.exports.showExportToCsv = false;
+
+  viewer.renderHtml("viewerContent")
+</script>
+</body>
+</html>

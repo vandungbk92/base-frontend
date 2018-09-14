@@ -1,0 +1,6 @@
+{
+  "name": "CreatePermission",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CreatePermission.js"
+}
